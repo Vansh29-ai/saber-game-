@@ -1,0 +1,95 @@
+{
+    "version": 1,
+    "name": "XR controlls",
+    "maps": [
+        {
+            "name": "XR",
+            "id": "b4669e1b-de1c-40f9-8b7b-f3c304491a03",
+            "actions": [
+                {
+                    "name": "left position",
+                    "type": "Value",
+                    "id": "efff4b0a-065e-43ad-95ba-270e1dcd26eb",
+                    "expectedControlType": "Vector3",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                },
+                {
+                    "name": "left rotation",
+                    "type": "Value",
+                    "id": "9c5954fa-aedc-491c-862e-9cb41a178603",
+                    "expectedControlType": "Quaternion",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                },
+                {
+                    "name": "right position",
+                    "type": "Value",
+                    "id": "239863df-804c-4443-8d9b-056a615d952c",
+                    "expectedControlType": "Vector3",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                },
+                {
+                    "name": "right rotation",
+                    "type": "Value",
+                    "id": "af5f49d7-c30f-4dce-9e64-5de0d07e624f",
+                    "expectedControlType": "Quaternion",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "a9913fb2-acdc-456b-9337-7ad94dd92ef9",
+                    "path": "",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "left position",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "24f6bd43-eb0b-480a-bbb8-988e60ddcc3e",
+                    "path": "",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "left rotation",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "a7c23386-5229-4609-97af-60547645f299",
+                    "path": "",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "right position",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "699ebe51-291a-4a0f-bec6-67e580296897",
+                    "path": "",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "right rotation",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}
