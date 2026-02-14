@@ -4,8 +4,43 @@ public class Saber : MonoBehaviour
 {
     public float splitLifetime = 2f;
 
+    public BeatSpawner beatSpawner;
+    public GameObject plane1;
+    public GameObject plane2;
+
+    private bool gameStarted = false;
+
     private void OnTriggerEnter(Collider other)
     {
+        // --------- HANDLE MENU PLANE FIRST ---------
+        if (other.CompareTag("Plane") && !gameStarted)
+        {
+            gameStarted = true;
+
+            // Start spawning
+            if (beatSpawner != null)
+                beatSpawner.StartGame();
+
+            // Split visual effect
+            Split(other.gameObject);
+
+            // Disable both planes safely
+            if (plane1 != null)
+               plane1.SetActive(false);
+               plane2.SetActive(false);
+               gameStarted = true;
+               beatSpawner.StartGame();
+
+            if (plane2 != null)
+                plane2.SetActive(false);
+                plane1.SetActive(false);
+                gameStarted = true;
+                beatSpawner.StartGame();beatSpawner.StartGame();
+
+            return; // STOP further processing
+        }
+
+        // --------- HANDLE NORMAL BEATS ---------
         if (other.CompareTag("Beat"))
         {
             Split(other.gameObject);
@@ -30,12 +65,10 @@ public class Saber : MonoBehaviour
     GameObject CreateHalf(Vector3 pos, Quaternion rot, Vector3 scale, int dir)
     {
         GameObject half = GameObject.CreatePrimitive(PrimitiveType.Cube);
+
         half.transform.position = pos + rot * new Vector3(dir * scale.x * 0.25f, 0, 0);
         half.transform.rotation = rot;
         half.transform.localScale = new Vector3(scale.x * 0.5f, scale.y, scale.z);
-
-        // Copy material from original (optional safer than Resources)
-        // half.GetComponent<Renderer>().material = obj.GetComponent<Renderer>().material;
 
         Rigidbody rb = half.AddComponent<Rigidbody>();
         rb.mass = 0.5f;

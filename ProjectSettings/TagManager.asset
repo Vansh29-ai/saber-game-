@@ -6,6 +6,10 @@ TagManager:
   tags:
   - BEAT
   - Beat
+  - Ground
+  - Planes
+  - Undefined
+  - Plane
   layers:
   - Default
   - TransparentFX
